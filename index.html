@@ -53,7 +53,8 @@
   <!-- Global base styles -->
   <style>
     * { font-family: 'Poppins', sans-serif; }
-    body { font-family: 'Poppins', sans-serif; color: #1E1E1E; }
+    body { font-family: 'Poppins', sans-serif; color: #1E1E1E; overflow-x: hidden; }
+    html { overflow-x: hidden; }
 
     /* FAQ accordion arrow animation */
     details summary { list-style: none; cursor: pointer; }
@@ -88,11 +89,62 @@
 
     /* Mobile overrides for elements with inline styles */
     @media (max-width: 767px) {
-      #eat-better-content { width: 100% !important; padding-top: 1rem !important; }
-      #eat-better { min-height: auto !important; }
-      #eat-better-photo { display: none !important; }
-      #pasta-img-wrap { display: none !important; }
-      #hero { min-height: 100svh; }
+      #eat-better { min-height: auto !important; padding-top: 70px !important; position: relative; z-index: 10; }
+      #eat-better > div > .relative { display: flex; flex-direction: column; }
+      #eat-better-photo {
+        display: block !important;
+        position: relative !important;
+        width: 72% !important;
+        margin: -280px auto 0 !important;
+        bottom: auto !important; right: auto !important;
+        order: -1;
+        overflow: hidden;
+        border-radius: 1.5rem;
+      }
+      #eat-better-photo img { width: 100% !important; height: auto !important; display: block; }
+      #eat-better-content { width: 100% !important; padding-top: 1.5rem !important; }
+      #hero { height: 100svh !important; margin-top: 0 !important; }
+      #difference-content { max-width: 82% !important; margin-left: auto !important; margin-right: auto !important; }
+      #difference { overflow: visible !important; padding-bottom: 260px !important; }
+      #pasta-img-wrap {
+        display: block !important;
+        position: absolute !important;
+        bottom: -130px !important;
+        top: auto !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+        z-index: 1 !important;
+      }
+      #pasta-img-wrap img { width: 160vw !important; height: auto !important; }
+      #reviews { position: relative; z-index: 2; padding-bottom: 280px !important; }
+      #eat-better { padding-bottom: 220px !important; }
+      #faq { padding-top: calc(32vw + 2rem) !important; position: relative; }
+      #faq-lightbulb {
+        display: block !important;
+        position: absolute !important;
+        top: -32vw !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 65vw !important;
+        height: 65vw !important;
+        border-radius: 3rem !important;
+        overflow: hidden !important;
+        z-index: 15 !important;
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+      }
+      #faq-lightbulb img { width: 100% !important; height: 100% !important; object-fit: cover; object-position: center; transform: scale(0.8); border-radius: 3rem !important; }
+      .badge-card { display: none !important; }
+      /* Transparent overlay navbar on mobile */
+      header {
+        position: absolute !important;
+        top: 0; left: 0; right: 0;
+        background: transparent !important;
+      }
+      header nav {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
     }
   </style>
 
@@ -241,48 +293,50 @@
   <section
     id="hero"
     aria-label="Hero — Fresh, Macro Balanced Meals"
-    class="relative overflow-hidden"
-    style="min-height: 620px;"
+    class="relative"
+    style="height: 993px;"
   >
-    <!-- Hero background image -->
-    <img
-      src="hero-bg.jpg"
-      alt="Beautifully plated macro balanced meal prep dishes arranged on a dark surface"
-      fetchpriority="high"
-      class="absolute inset-0 w-full h-full object-cover object-center md:object-right"
-    />
+    <picture>
+      <source media="(max-width: 767px)" srcset="mobile-hero-background.png" />
+      <img
+        src="updated-background.png"
+        alt="Fresh macro balanced meal prep dishes"
+        fetchpriority="high"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+      />
+    </picture>
 
     <!-- Hero content -->
-    <div class="relative z-10 max-w-7xl mx-auto px-6 py-16 flex items-center pt-28 md:pt-16" style="min-height: 620px;">
-      <div class="max-w-lg">
+    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-10 flex items-start justify-start pt-24 md:items-center md:pt-20">
+      <div class="max-w-xl text-left md:mx-0">
         <!-- Google review badge -->
-        <div class="mb-4">
-          <img src="google-review-hero.png" alt="4.9 Stars on Google" class="h-20 w-auto block" />
+        <div class="mb-6">
+          <img src="google-review-hero.png" alt="4.9 Stars on Google" class="h-16 md:h-24 w-auto block" style="mix-blend-mode: multiply;" />
         </div>
 
         <!-- H1 Headline -->
-        <h1 class="text-rb-black text-3xl md:text-5xl font-black leading-tight mb-4">
+        <h1 class="text-rb-black text-4xl md:text-6xl font-black leading-tight mb-6">
           <span class="block whitespace-nowrap">Fresh, Macro Balanced</span>
           <span class="block whitespace-nowrap">Meals. <span class="text-rb-green">Fuel Your Life.</span></span>
         </h1>
 
         <!-- Subtext -->
-        <p class="text-rb-black text-base font-light mb-8 leading-relaxed max-w-[80%] md:max-w-none">
+        <p class="text-rb-black text-lg font-light mb-10 leading-relaxed">
           Chef-Prepared, Ready-To-Eat Meals Cooked Without Seed Oils And Delivered Fresh To Your Door.
           New Menu Every Week.
         </p>
 
         <!-- Offer Text -->
-        <p class="text-rb-black text-sm font-semibold mb-3 text-center md:text-left">
+        <p class="text-rb-black text-base font-semibold mb-5 md:text-left">
           Get <strong>50% OFF</strong> your first box <strong>+ Free Treat With Every Order</strong> starting week 2
         </p>
 
         <!-- CTA Button -->
-        <div class="text-center md:text-left">
+        <div class="text-left">
           <a
             href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
             aria-label="Get the 50% off offer now"
-            class="inline-block bg-rb-green text-white font-bold text-sm px-8 py-4 rounded btn-cta uppercase tracking-widest hover:opacity-90 transition-opacity"
+            class="inline-block bg-rb-green text-white font-bold text-base px-12 py-5 rounded btn-cta uppercase tracking-widest hover:opacity-90 transition-opacity"
           >
             Get Offer Now
           </a>
@@ -290,55 +344,18 @@
       </div>
     </div>
 
-    <!-- Floating Stat Badge Cards -->
-    <div class="hidden md:block absolute top-20 right-80 z-20">
-      <div class="badge-card bg-white rounded-xl px-4 py-3 flex items-center gap-3">
-        <span class="text-2xl">🔥</span>
-        <div>
-          <p class="text-rb-black font-bold text-sm leading-none">420 Calories</p>
-          <p class="text-gray-400 text-xs mt-0.5">Per Serving</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="hidden md:block absolute top-48 right-56 z-20">
-      <div class="badge-card bg-white rounded-xl px-4 py-3 flex items-center gap-3">
-        <span class="text-2xl">💪</span>
-        <div>
-          <p class="text-rb-black font-bold text-sm leading-none">High Protein</p>
-          <p class="text-gray-400 text-xs mt-0.5">40g+ Per Meal</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="hidden md:block absolute top-72 right-80 z-20">
-      <div class="badge-card bg-white rounded-xl px-4 py-3 flex items-center gap-3">
-        <span class="text-2xl">✅</span>
-        <div>
-          <p class="text-rb-black font-bold text-sm leading-none">No Bad Oils</p>
-          <p class="text-gray-400 text-xs mt-0.5">Zero Seed Oils</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Double Protein badge -->
-    <div class="hidden md:block absolute top-16 right-48 z-20">
-      <div class="bg-rb-green text-white font-black text-xs px-4 py-2 rounded-full shadow-lg uppercase tracking-wide rotate-6">
-        🍗 Double Protein Available
-      </div>
-    </div>
 
     <!-- Bottom feature strip -->
     <div class="absolute bottom-0 left-0 right-0 z-20 bg-rb-green bg-opacity-95">
       <div class="max-w-7xl mx-auto px-6 py-3 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-white text-sm font-medium">
         <span>⭐ Chef Quality Flavor</span>
-        <span class="opacity-50">|</span>
+        <span class="hidden md:inline opacity-50">|</span>
         <span>⏱ Ready in 3 Minutes</span>
-        <span class="opacity-50">|</span>
+        <span class="hidden md:inline opacity-50">|</span>
         <span>🍽 New Menu Every Week</span>
-        <span class="opacity-50">|</span>
+        <span class="hidden md:inline opacity-50">|</span>
         <span>💪 High Protein</span>
-        <span class="opacity-50">|</span>
+        <span class="hidden md:inline opacity-50">|</span>
         <span>🥗 Vegetarian Options</span>
       </div>
     </div>
@@ -356,12 +373,12 @@
       </div>
 
       <!-- Meal Grid: 3 columns × 2 rows -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
 
         <!-- Meal Card 1 -->
-        <div class="pt-24">
+        <div class="pt-24 md:pt-24">
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-20 left-1/2 -translate-x-1/2 z-10 w-72 h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal1.jpg"
                 alt="Tomato Basil Chicken — a fresh, high-protein chicken meal with tomato basil sauce"
@@ -373,9 +390,9 @@
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Dairy Free</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 152px; left: 0px;">Soy Free</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 152px; right: 0px;">Macro Balanced</span>
-            <div class="pt-60 px-6 pb-4">
+            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
               <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Tomato Basil Chicken</h3>
-              <div class="flex justify-center items-center gap-4 text-xs font-semibold bg-black text-white rounded-b-2xl -mx-6 -mb-4 mt-3 py-3 px-4">
+              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
                 <span>Protein <span class="font-normal">41g</span></span>
                 <span>Fat <span class="font-normal">8g</span></span>
                 <span class="text-gray-400 font-normal">348 Calories</span>
@@ -385,9 +402,9 @@
         </div>
 
         <!-- Meal Card 2 -->
-        <div class="pt-24">
+        <div class="pt-24 md:pt-24">
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-20 left-1/2 -translate-x-1/2 z-10 w-72 h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal2.jpg"
                 alt="Classic Chicken Parmesan with marinara sauce and fresh herbs"
@@ -397,9 +414,9 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Protein Packed!</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Classic Recipe ReBuilt</span>
-            <div class="pt-60 px-6 pb-4">
+            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
               <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Classic Chicken Parm</h3>
-              <div class="flex justify-center items-center gap-4 text-xs font-semibold bg-black text-white rounded-b-2xl -mx-6 -mb-4 mt-3 py-3 px-4">
+              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
                 <span>Protein <span class="font-normal">48g</span></span>
                 <span>Carbs <span class="font-normal">37g</span></span>
                 <span class="text-gray-400 font-normal">457 Calories</span>
@@ -409,9 +426,9 @@
         </div>
 
         <!-- Meal Card 3 -->
-        <div class="pt-24">
+        <div class="pt-24 md:pt-24">
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-20 left-1/2 -translate-x-1/2 z-10 w-72 h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal3.jpg"
                 alt="Cali Burger — a fresh California-style burger with crisp toppings"
@@ -421,9 +438,9 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Keto Approved</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Low Carb</span>
-            <div class="pt-60 px-6 pb-4">
+            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
               <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Cali Burger</h3>
-              <div class="flex justify-center items-center gap-4 text-xs font-semibold bg-black text-white rounded-b-2xl -mx-6 -mb-4 mt-3 py-3 px-4">
+              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
                 <span>Protein <span class="font-normal">30g</span></span>
                 <span>Net Carbs <span class="font-normal">5g</span></span>
                 <span class="text-gray-400 font-normal">475 Calories</span>
@@ -433,9 +450,9 @@
         </div>
 
         <!-- Meal Card 4 -->
-        <div class="pt-24">
+        <div class="pt-24 md:pt-24">
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-20 left-1/2 -translate-x-1/2 z-10 w-72 h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal4.jpg"
                 alt="Vegan Brown Butter and Sage Spaghetti Squash with seasonal vegetables"
@@ -445,9 +462,9 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Vegan</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Gluten Free</span>
-            <div class="pt-60 px-6 pb-4">
+            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
               <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Brown Butter &amp; Sage</h3>
-              <div class="flex justify-center items-center gap-4 text-xs font-semibold bg-black text-white rounded-b-2xl -mx-6 -mb-4 mt-3 py-3 px-4">
+              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
                 <span>Protein <span class="font-normal">8g</span></span>
                 <span>Carbs <span class="font-normal">39g</span></span>
                 <span class="text-gray-400 font-normal">350 Calories</span>
@@ -457,9 +474,9 @@
         </div>
 
         <!-- Meal Card 5 -->
-        <div class="pt-24">
+        <div class="pt-24 md:pt-24">
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-20 left-1/2 -translate-x-1/2 z-10 w-72 h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal5.jpg"
                 alt="Smokey Maple BBQ Brisket with caramelized maple glaze and roasted sides"
@@ -469,9 +486,9 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Premium Meat</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Flavor Packed</span>
-            <div class="pt-60 px-6 pb-4">
+            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
               <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Smokey Maple BBQ Brisket</h3>
-              <div class="flex justify-center items-center gap-4 text-xs font-semibold bg-black text-white rounded-b-2xl -mx-6 -mb-4 mt-3 py-3 px-4">
+              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
                 <span>Protein <span class="font-normal">34g</span></span>
                 <span>Carbs <span class="font-normal">36g</span></span>
                 <span class="text-gray-400 font-normal">460 Calories</span>
@@ -481,9 +498,9 @@
         </div>
 
         <!-- Meal Card 6 -->
-        <div class="pt-24">
+        <div class="pt-24 md:pt-24">
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-20 left-1/2 -translate-x-1/2 z-10 w-72 h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal6.jpg"
                 alt="Chorizo Guacamole Scramble — a keto-friendly high-protein breakfast meal"
@@ -493,9 +510,9 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Keto Approved</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Healthy Breakfast</span>
-            <div class="pt-60 px-6 pb-4">
+            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
               <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Chorizo &amp; Guac Scramble</h3>
-              <div class="flex justify-center items-center gap-4 text-xs font-semibold bg-black text-white rounded-b-2xl -mx-6 -mb-4 mt-3 py-3 px-4">
+              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
                 <span>Protein <span class="font-normal">26g</span></span>
                 <span>Net Carbs <span class="font-normal">4g</span></span>
                 <span class="text-gray-400 font-normal">370 Calories</span>
@@ -522,32 +539,32 @@
 
 
   <!-- 5. HOW IT WORKS -->
-  <section id="how-it-works" aria-label="How It Works — 3 Simple Steps" class="py-20 bg-gray-50">
+  <section id="how-it-works" aria-label="How It Works — 3 Simple Steps" class="py-8 md:py-20" style="background: linear-gradient(to bottom, rgba(164, 228, 104, 0.2), white);">
     <div class="max-w-7xl mx-auto px-6">
       <!-- Section header -->
-      <div class="text-center mb-14">
+      <div class="text-center mb-6 md:mb-14">
         <p class="text-rb-green text-xs font-bold uppercase tracking-widest mb-2">Simple as 1-2-3</p>
-        <h2 class="text-4xl font-black text-rb-black">How It Works</h2>
+        <h2 class="text-3xl md:text-4xl font-black text-rb-black">How It Works</h2>
       </div>
 
       <!-- 3 Steps -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10">
 
         <!-- Step 1 -->
-        <div class="flex flex-col">
-          <div class="rounded-2xl mb-6 shadow-md">
+        <div class="flex flex-col items-center md:items-start">
+          <div class="rounded-2xl mb-2 md:mb-6 shadow-md w-[38vw] h-[38vw] md:w-full md:h-auto overflow-hidden flex-shrink-0">
             <img
               src="how-it-works-1.jpg"
               alt="A person browsing and selecting their weekly meal choices on a laptop"
               loading="lazy"
-              class="w-full h-auto object-contain rounded-2xl"
+              class="w-full h-full md:h-auto object-cover md:object-contain rounded-2xl"
             />
           </div>
-          <div class="flex items-start gap-4">
-            <span class="text-9xl font-black text-rb-green leading-none" style="line-height:1;">1</span>
-            <div>
-              <h3 class="text-lg font-bold text-rb-black mb-2 mt-2">Choose Your Meals</h3>
-              <p class="text-gray-500 text-sm leading-relaxed">
+          <div class="flex flex-row items-start gap-2 md:gap-4 w-[38vw] md:w-auto">
+            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0" style="line-height:1;">1</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 md:mt-2 leading-snug">Choose Your Meals</h3>
+              <p class="text-gray-500 text-[10px] md:text-sm leading-relaxed">
                 New Options Every Week To Suit Your Macros, Dietary Needs, Or Let Us Build Your Box.
               </p>
             </div>
@@ -555,20 +572,20 @@
         </div>
 
         <!-- Step 2 -->
-        <div class="flex flex-col">
-          <div class="rounded-2xl mb-6 shadow-md">
+        <div class="flex flex-col items-center md:items-start">
+          <div class="rounded-2xl mb-2 md:mb-6 shadow-md w-[38vw] h-[38vw] md:w-full md:h-auto overflow-hidden flex-shrink-0">
             <img
               src="how-it-works-2.jpg"
               alt="A professional chef cooking fresh, high-quality meals in the ReBuilt kitchen"
               loading="lazy"
-              class="w-full h-auto object-contain rounded-2xl"
+              class="w-full h-full md:h-auto object-cover md:object-contain rounded-2xl"
             />
           </div>
-          <div class="flex items-start gap-4">
-            <span class="text-9xl font-black text-rb-green leading-none" style="line-height:1;">2</span>
-            <div>
-              <h3 class="text-lg font-bold text-rb-black mb-2 mt-2">We Cook, You Live</h3>
-              <p class="text-gray-500 text-sm leading-relaxed">
+          <div class="flex flex-row items-start gap-2 md:gap-4 w-[38vw] md:w-auto">
+            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0" style="line-height:1;">2</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 md:mt-2 leading-snug">We Cook, You Live</h3>
+              <p class="text-gray-500 text-[10px] md:text-sm leading-relaxed">
                 Fresh Ingredients Prepared From Real Recipes. Endless Preference Options, Delicious Meals Crafted Every Single Week.
               </p>
             </div>
@@ -576,20 +593,20 @@
         </div>
 
         <!-- Step 3 -->
-        <div class="flex flex-col">
-          <div class="rounded-2xl mb-6 shadow-md">
+        <div class="flex flex-col items-center md:items-start">
+          <div class="rounded-2xl mb-2 md:mb-6 shadow-md w-[38vw] h-[38vw] md:w-full md:h-auto overflow-hidden flex-shrink-0">
             <img
               src="how-it-works-3.jpg"
               alt="A branded ReBuilt meal delivery box arriving fresh at a customer's doorstep"
               loading="lazy"
-              class="w-full h-auto object-contain rounded-2xl"
+              class="w-full h-full md:h-auto object-cover md:object-contain rounded-2xl"
             />
           </div>
-          <div class="flex items-start gap-4">
-            <span class="text-9xl font-black text-rb-green leading-none" style="line-height:1;">3</span>
-            <div>
-              <h3 class="text-lg font-bold text-rb-black mb-2 mt-2">Delivered Fresh</h3>
-              <p class="text-gray-500 text-sm leading-relaxed">
+          <div class="flex flex-row items-start gap-2 md:gap-4 w-[38vw] md:w-auto">
+            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0" style="line-height:1;">3</span>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 md:mt-2 leading-snug">Delivered Fresh</h3>
+              <p class="text-gray-500 text-[10px] md:text-sm leading-relaxed">
                 Get meals delivered to your door, or Picked up locally. never frozen. Heat in 2 minutes. Done.
               </p>
             </div>
@@ -614,9 +631,9 @@
 
 
   <!-- 6. THE REBUILT DIFFERENCE -->
-  <section id="difference" aria-label="The Rebuilt Difference — Why Choose ReBuilt" class="py-20 relative" style="background-image: url('rebuilt-difference-background.png'); background-size: cover; background-position: center;">
+  <section id="difference" aria-label="The Rebuilt Difference — Why Choose ReBuilt" class="py-20 relative" style="background-image: url('rebuilt-difference-background.png'); background-size: cover; background-position: center; overflow-x: clip; overflow-y: visible;">
     <div class="max-w-7xl mx-auto px-6">
-      <div style="max-width: 62%;">
+      <div id="difference-content" style="max-width: 62%;">
 
         <!-- Features -->
         <div>
@@ -625,7 +642,7 @@
             The <span class="text-rb-green">Rebuilt</span> Difference
           </h2>
 
-          <div class="grid grid-cols-3 gap-8">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
 
             <!-- Feature 1 -->
             <div>
@@ -699,7 +716,7 @@
     </div>
 
     <!-- Pasta image: absolutely positioned, half off right edge -->
-    <div id="pasta-img-wrap" class="absolute top-1/2 -translate-y-1/2 z-10" style="right: -30px;">
+    <div id="pasta-img-wrap" class="absolute top-1/2 -translate-y-1/2 z-10" style="right: min(-30px, calc(-30px + (100vw - 1440px) * 0.5));">
       <img
         src="difference-pasta.png"
         alt="A beautifully plated fresh pasta dish — an example of ReBuilt's chef-quality meals made without seed oils"
@@ -726,11 +743,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- Review 1 -->
-        <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow relative">
+        <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
           <div class="mb-4">
             <span class="text-yellow-400 text-lg">★★★★★</span>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+          <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
             "I tried almost every meal prep service out there and nothing comes close to the quality and freshness of ReBuilt. The first time I tried it, I was amazed by how good everything tasted. The portions are generous, the macros are on point, and the variety keeps me excited about eating healthy. I have recommended this to all my friends and family. If you're on the fence — don't be. Just try it."
           </p>
           <div class="flex items-center justify-between">
@@ -740,11 +757,11 @@
         </article>
 
         <!-- Review 2 -->
-        <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow relative">
+        <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
           <div class="mb-4">
             <span class="text-yellow-400 text-lg">★★★★★</span>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+          <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
             "These Meals Were Fresh, Clean, and Absolutely Delicious. I Was Amazed By The Quality. My Whole Family Loved Every Single Dish. The No Seed Oil Promise Is Real — You Can Actually Taste The Difference. Two Months In And I've Lost Weight, Gained Energy, And Cut My Weekly Cooking Time To Zero. ReBuilt Has Completely Changed How Our Household Thinks About Healthy Eating."
           </p>
           <div class="flex items-center justify-between">
@@ -754,11 +771,11 @@
         </article>
 
         <!-- Review 3 -->
-        <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow relative">
+        <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
           <div class="mb-4">
             <span class="text-yellow-400 text-lg">★★★★★</span>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+          <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
             "Honestly the best investment I've made for myself. I was skeptical at first — I like to cook — but these meals are genuinely better than what I make at home. The ingredients are premium, the flavors are bold, and everything arrives perfectly portioned. I especially appreciate how transparent they are about macros. I've hit my fitness goals faster than ever using ReBuilt. Customer service is also fantastic and super responsive."
           </p>
           <div class="flex items-center justify-between">
@@ -768,11 +785,11 @@
         </article>
 
         <!-- Review 4 -->
-        <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow relative">
+        <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
           <div class="mb-4">
             <span class="text-yellow-400 text-lg">★★★★★</span>
           </div>
-          <p class="text-gray-600 text-sm leading-relaxed mb-6 italic">
+          <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
             "I'm Vegan With High Macro Needs. This Service I Discovered From A Friend And It Honestly Has Changed My Life. Knowing That Every Meal I Eat Is Packed With The Right Macros And Made With Clean Ingredients Takes So Much Stress Out Of My Day. The Weekly Menu Always Has Something I'm Excited About. ReBuilt Has Genuinely Made Healthy Eating Feel Easy And Enjoyable — Not Like A Chore."
           </p>
           <div class="flex items-center justify-between">
@@ -806,36 +823,36 @@
         <!-- Left: Offer content -->
         <div id="eat-better-content" class="pt-20" style="width: 48%;">
           <div class="p-8">
-          <p class="text-rb-green text-xs font-bold uppercase tracking-widest mb-2">Let's Get Started</p>
-          <h2 class="text-4xl font-black text-rb-black mb-2">Ready To Eat Better?</h2>
-          <p class="text-gray-500 text-sm mb-8">Join Thousands of Tampa Subscribers Eating Fresh, Chef-Prepared Meals Every Week.</p>
+          <p class="text-rb-black text-xs font-bold uppercase tracking-widest mb-2 text-center md:text-left">Let's Get Started</p>
+          <h2 class="text-4xl font-black text-rb-black mb-2 text-center md:text-left">Ready To <span class="text-rb-green">Eat Better?</span></h2>
+          <p class="text-gray-500 text-sm mb-8 text-center md:text-left">Join thousands of subscribers eating fresh, chef-prepared meals every week.</p>
 
           <!-- Offer Badge Cards -->
-          <div class="flex flex-wrap gap-4 mb-8">
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
 
             <!-- Badge 1: 50% OFF -->
             <div class="flex-1 bg-white rounded-2xl p-5 text-center">
               <p class="text-black text-xs font-semibold uppercase tracking-wider mb-1">First Box</p>
               <p class="text-rb-green text-4xl font-black leading-none">50%</p>
-              <p class="text-rb-green text-2xl font-black leading-none">OFF</p>
+              <p class="text-rb-green text-4xl font-black leading-none">OFF</p>
               <p class="text-black text-xs mt-2">Applied Automatically At Checkout</p>
             </div>
 
             <!-- Badge 2: FREE TREAT -->
             <div class="flex-1 bg-white rounded-2xl p-5 text-center">
-              <p class="text-black text-xs font-semibold uppercase tracking-wider mb-1">Always</p>
-              <p class="text-black text-2xl font-black leading-none">FREE</p>
-              <p class="text-rb-green text-xl font-black leading-none">TREAT</p>
-              <p class="text-black text-sm font-bold">FOR LIFE</p>
-              <p class="text-black text-xs mt-2">One Free Add-On, Auto-Applied, Every Order</p>
+              <p class="text-rb-black text-xs font-bold uppercase tracking-wider mb-1">Every Box After</p>
+              <p class="text-rb-green text-4xl font-black leading-none">FREE</p>
+              <p class="text-rb-green text-4xl font-black leading-none">TREAT</p>
+              <p class="text-rb-black text-base font-bold mt-1">FOR LIFE!</p>
+              <p class="text-black text-xs mt-2">One free muffin, cookie, or the like in every order</p>
             </div>
 
             <!-- Badge 3: FRESH FAST & DELICIOUS -->
             <div class="flex-1 bg-white rounded-2xl p-5 text-center">
               <p class="text-black text-xs font-semibold uppercase tracking-wider mb-1">Always</p>
-              <p class="text-black text-xl font-black leading-none">FRESH</p>
-              <p class="text-black text-xl font-black leading-none">FAST &amp;</p>
-              <p class="text-rb-green text-xl font-black leading-none">DELICIOUS</p>
+              <p class="text-rb-green text-2xl font-black leading-tight">FRESH,</p>
+              <p class="text-rb-green text-2xl font-black leading-tight">FAST &amp;</p>
+              <p class="text-rb-green text-2xl font-black leading-tight">DELICIOUS</p>
               <p class="text-black text-xs mt-2">Chef-Level Quality, Guaranteed</p>
             </div>
 
@@ -846,10 +863,11 @@
             <a
               href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
               aria-label="Get your offer and start eating better today"
-              class="inline-block bg-rb-green text-white font-bold px-10 py-4 rounded btn-cta uppercase tracking-widest text-sm hover:opacity-90 transition-colors"
+              class="inline-block bg-rb-black text-white font-bold px-10 py-4 rounded btn-cta uppercase tracking-widest text-sm hover:opacity-90 transition-colors"
             >
               Get Offer Now →
             </a>
+            <p class="text-rb-black text-[8px] mt-3 leading-tight mx-auto md:mx-0" style="max-width: 320px;">Skip or cancel anytime. No commitment. New menu every week. New subscribers only. 50% discount applied to first order. Free treat included with each delivery starting week 2 while subscription is active.</p>
           </div>
           </div><!-- /green bg wrapper -->
         </div>
@@ -875,80 +893,80 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
 
         <!-- Left: Lightbulb image -->
-        <div class="hidden md:block rounded-2xl overflow-hidden">
+        <div id="faq-lightbulb" class="hidden md:block rounded-2xl overflow-hidden">
           <img src="lightbulb.png" alt="" aria-hidden="true" class="w-full h-full object-cover object-center" />
         </div>
 
         <!-- Right: FAQ -->
         <div>
-          <p class="text-rb-green text-xs font-bold uppercase tracking-widest mb-3">FAQ</p>
-          <h2 class="text-4xl font-black text-rb-black mb-10">Common Questions</h2>
+          <p class="text-rb-black text-xs font-bold uppercase tracking-widest mb-3 text-center md:text-left">FAQ</p>
+          <h2 class="text-4xl font-black text-rb-black mb-10 text-center md:text-left">Common <span class="text-rb-green">Questions</span></h2>
 
           <div class="flex flex-col gap-3">
 
             <!-- FAQ Item 1 -->
             <details class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden group">
               <summary class="flex items-center justify-between px-6 py-4 text-rb-black font-semibold text-sm hover:text-rb-green transition-colors">
-                <h3 class="font-semibold text-sm">What is ReBuilt Meals?</h3>
+                <h3 class="font-semibold text-sm">Am I locked into a subscription?</h3>
                 <span class="faq-arrow text-rb-green text-xl ml-4 flex-shrink-0">▾</span>
               </summary>
               <div class="px-6 pb-5">
-                <p class="text-gray-500 text-sm leading-relaxed">ReBuilt Meals is a Tampa-based meal prep delivery service that provides fresh, chef-prepared, macro balanced meals delivered straight to your door every week. Our menu rotates weekly so you always have something new and exciting to look forward to. No seed oils, never frozen, always delicious.</p>
+                <p class="text-gray-500 text-sm leading-relaxed">No. You can skip a week or cancel anytime from your account dashboard. No cancellation fees, no commitments. We earn your business every week.</p>
               </div>
             </details>
 
             <!-- FAQ Item 2 -->
             <details class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
               <summary class="flex items-center justify-between px-6 py-4 text-rb-black font-semibold text-sm hover:text-rb-green transition-colors">
-                <h3 class="font-semibold text-sm">How Often Can I Skip a Week?</h3>
+                <h3 class="font-semibold text-sm">How does the free side item work?</h3>
                 <span class="faq-arrow text-rb-green text-xl ml-4 flex-shrink-0">▾</span>
               </summary>
               <div class="px-6 pb-5">
-                <p class="text-gray-500 text-sm leading-relaxed">You can skip any week from your customer dashboard. Simply log in and manage your subscription preferences. We ask that you submit changes before the weekly cutoff deadline so your order can be adjusted in time. There are no penalties for skipping — life happens!</p>
+                <p class="text-gray-500 text-sm leading-relaxed">As an active subscriber, every box automatically includes one free side item (like roasted sweet potatoes, rice, or seasonal veggies). It's our way of saying thanks for sticking with us.</p>
               </div>
             </details>
 
             <!-- FAQ Item 3 -->
             <details class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
               <summary class="flex items-center justify-between px-6 py-4 text-rb-black font-semibold text-sm hover:text-rb-green transition-colors">
-                <h3 class="font-semibold text-sm">How Does the Side Menu Work?</h3>
+                <h3 class="font-semibold text-sm">Can I pick my own meals or do you choose for me?</h3>
                 <span class="faq-arrow text-rb-green text-xl ml-4 flex-shrink-0">▾</span>
               </summary>
               <div class="px-6 pb-5">
-                <p class="text-gray-500 text-sm leading-relaxed">Every week subscribers get access to add-on side items — think roasted veggies, rice, or on-the-go snacks — at checkout. One free treat is included automatically with every order starting from week two of your subscription. Add extras to any order to round out your nutrition plan.</p>
+                <p class="text-gray-500 text-sm leading-relaxed">Both! You can browse the weekly menu and pick your favorites, or let our team curate a box based on your preferences. Either way, the menu changes every week.</p>
               </div>
             </details>
 
             <!-- FAQ Item 4 -->
             <details class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
               <summary class="flex items-center justify-between px-6 py-4 text-rb-black font-semibold text-sm hover:text-rb-green transition-colors">
-                <h3 class="font-semibold text-sm">Can I Customize My Meals?</h3>
+                <h3 class="font-semibold text-sm">How is this different from Factor or HelloFresh?</h3>
                 <span class="faq-arrow text-rb-green text-xl ml-4 flex-shrink-0">▾</span>
               </summary>
               <div class="px-6 pb-5">
-                <p class="text-gray-500 text-sm leading-relaxed">Yes! You can select from the weekly menu to build your own box. We offer protein, carb, and fat macro profiles across all meals so you can match your fitness and dietary goals. We also offer double protein upgrades on select meals for athletes and high-output individuals.</p>
+                <p class="text-gray-500 text-sm leading-relaxed">We're a local Tampa Bay kitchen, not a national shipping operation. Your meals are prepared fresh (never frozen), cooked in olive oil, and delivered same-day or available for pickup. National services ship frozen meals across the country — we deliver freshness across the Bay.</p>
               </div>
             </details>
 
             <!-- FAQ Item 5 -->
             <details class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
               <summary class="flex items-center justify-between px-6 py-4 text-rb-black font-semibold text-sm hover:text-rb-green transition-colors">
-                <h3 class="font-semibold text-sm">How is This Different from Factor Meals?</h3>
+                <h3 class="font-semibold text-sm">What dietary options do you offer?</h3>
                 <span class="faq-arrow text-rb-green text-xl ml-4 flex-shrink-0">▾</span>
               </summary>
               <div class="px-6 pb-5">
-                <p class="text-gray-500 text-sm leading-relaxed">Unlike national shipping companies, ReBuilt is a local Tampa kitchen. Your meals are prepared fresh and never frozen, delivered directly from our kitchen to your door — meaning better taste, better ingredients, and a faster turnaround than big-box national brands. You're also supporting a local Tampa business.</p>
+                <p class="text-gray-500 text-sm leading-relaxed">Our weekly menu includes keto, high-protein, paleo, and balanced options. You can filter by dietary preference when choosing your meals. We also accommodate common allergies — just note them in your profile.</p>
               </div>
             </details>
 
             <!-- FAQ Item 6 -->
             <details class="bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
               <summary class="flex items-center justify-between px-6 py-4 text-rb-black font-semibold text-sm hover:text-rb-green transition-colors">
-                <h3 class="font-semibold text-sm">Where Are the Pickup Locations?</h3>
+                <h3 class="font-semibold text-sm">Where are the pickup locations?</h3>
                 <span class="faq-arrow text-rb-green text-xl ml-4 flex-shrink-0">▾</span>
               </summary>
               <div class="px-6 pb-5">
-                <p class="text-gray-500 text-sm leading-relaxed">We have multiple pickup locations across Tampa Bay including South Tampa, Clearwater, Wesley Chapel, Carrollwood, and more. We also offer direct home delivery across the greater Tampa area. Check our website for the full list of current pickup spots and delivery zones.</p>
+                <p class="text-gray-500 text-sm leading-relaxed">We have pickup spots across Tampa Bay including South Tampa, Clearwater, and St. Petersburg. Check the map on our locations page for the one nearest you. Pickup is available on delivery days.</p>
               </div>
             </details>
 
