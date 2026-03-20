@@ -157,11 +157,17 @@
       }
     }
 
-    /* Desktop: pasta drifts right as viewport shrinks */
+    /* Desktop: pasta anchored to right edge, scales with viewport */
     @media (min-width: 768px) {
-      #difference { overflow: hidden; }
+      #difference { overflow: visible; }
       #pasta-img-wrap {
-        right: calc(-30px - max(0px, (1100px - 100vw)));
+        right: 0;
+      }
+      #pasta-img-wrap img {
+        width: 45vw;
+        max-width: 700px;
+        min-width: 300px;
+        height: auto;
       }
     }
   </style>
@@ -291,7 +297,7 @@
 
       <!-- Offer text — centered between logo and button -->
       <p class="flex-1 text-center text-[10px] md:text-sm text-rb-black md:text-gray-600 leading-snug line-clamp-2">
-        Get <strong>50% OFF</strong> your first box + <strong>Free Treat</strong> from week 2
+        Get <strong>50% off</strong> your first box + <strong>Free Treat</strong> with Every Order starting week 2
       </p>
 
       <!-- CTA -->
@@ -588,7 +594,7 @@
             <div class="flex-1 min-w-0 flex flex-col justify-center">
               <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 leading-snug">Choose Your Meals</h3>
               <p class="text-gray-500 text-[10px] md:text-sm leading-snug">
-                New options every week. We'll match your macros or build your box for you.
+                New options every week to keep fresh and exciting. Filter by Dietary Needs, or let us build your box.
               </p>
             </div>
           </div>
@@ -609,7 +615,7 @@
             <div class="flex-1 min-w-0 flex flex-col justify-center">
               <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 leading-snug">We Cook, You Live</h3>
               <p class="text-gray-500 text-[10px] md:text-sm leading-snug">
-                Real recipes, fresh ingredients. Endless options crafted every week.
+                Our kitchen prepares your meals fresh With no seed oils. Chef-crafted every single week.
               </p>
             </div>
           </div>
@@ -630,7 +636,7 @@
             <div class="flex-1 min-w-0 flex flex-col justify-center">
               <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 leading-snug">Delivered Fresh</h3>
               <p class="text-gray-500 text-[10px] md:text-sm leading-snug">
-                Door delivery or local pickup. Never frozen. Heat in 2 minutes.
+                Get meals delivered to your door, or Picked up locally. never frozen. Heat in 2 minutes. Done.
               </p>
             </div>
           </div>
@@ -656,7 +662,7 @@
   <!-- 6. THE REBUILT DIFFERENCE -->
   <section id="difference" aria-label="The Rebuilt Difference — Why Choose ReBuilt" class="py-20 relative" style="background-image: url('rebuilt-difference-background.png'); background-size: cover; background-position: center;">
     <div class="max-w-7xl mx-auto px-6">
-      <div id="difference-content" style="max-width: 62%;">
+      <div id="difference-content" style="max-width: 55%;">
 
         <!-- Features -->
         <div>
@@ -744,7 +750,6 @@
         src="difference-pasta.png"
         alt="A beautifully plated fresh pasta dish — an example of ReBuilt's chef-quality meals made without seed oils"
         loading="lazy"
-        style="height: 850px; width: auto;"
       />
     </div>
 
@@ -771,7 +776,7 @@
             <span class="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
-            "I tried almost every meal prep service out there and nothing comes close to the quality and freshness of ReBuilt. The first time I tried it, I was amazed by how good everything tasted. The portions are generous, the macros are on point, and the variety keeps me excited about eating healthy. I have recommended this to all my friends and family. If you're on the fence — don't be. Just try it."
+            "I have tried a lot of meal prep services and this one really stands out. The variety is impressive and the meals never feel repetitive or boring. Everything tastes fresh and well seasoned, not like typical bland prep food. What I appreciate most is how easy it is to stay on track with high protein options that actually taste great. It makes eating clean and hitting nutrition goals effortless without sacrificing flavor. Highly recommend for anyone serious about fitness and convenience."
           </p>
           <div class="flex items-center justify-between">
             <cite class="not-italic font-bold text-rb-black text-sm">Adam Cole</cite>
@@ -785,7 +790,7 @@
             <span class="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
-            "These Meals Were Fresh, Clean, and Absolutely Delicious. I Was Amazed By The Quality. My Whole Family Loved Every Single Dish. The No Seed Oil Promise Is Real — You Can Actually Taste The Difference. Two Months In And I've Lost Weight, Gained Energy, And Cut My Weekly Cooking Time To Zero. ReBuilt Has Completely Changed How Our Household Thinks About Healthy Eating."
+            "These meals are fresh, clean ingredients, no seed oils, balanced and savory. I have tried HelloFresh, HomeChef and Factor. Rebuilt is by far the best. Love the option of warming in an oven vs. using a microwave. I stick them in the air fryer on bake 325 about 8 minutes and honestly it's better than mons cooking. I've been on the program for 4 weeks, everything has been really good, nutritious and filling (in the right way.)"
           </p>
           <div class="flex items-center justify-between">
             <cite class="not-italic font-bold text-rb-black text-sm">Kelly Hendry</cite>
@@ -799,7 +804,7 @@
             <span class="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
-            "Honestly the best investment I've made for myself. I was skeptical at first — I like to cook — but these meals are genuinely better than what I make at home. The ingredients are premium, the flavors are bold, and everything arrives perfectly portioned. I especially appreciate how transparent they are about macros. I've hit my fitness goals faster than ever using ReBuilt. Customer service is also fantastic and super responsive."
+            "Worth the investment, hands down! I get my time back. I don't like to cook but I want to eat healthy. Rebuilt Meals helps me do that. I pick up my meals at the gym. It gives me extra accountability to show up. There are a wide variety of meals and you can mix and match what type of meal you want (performance, lifestyle, keto, etc). My son even likes them, sometimes I buy extra if I won't have time to cook. Customer service is quick, efficient, and caring. I get to speak to a real human if I want to. Or I can use their online chat feature."
           </p>
           <div class="flex items-center justify-between">
             <cite class="not-italic font-bold text-rb-black text-sm">Hannah Rogers</cite>
@@ -813,10 +818,10 @@
             <span class="text-yellow-400 text-lg">★★★★★</span>
           </div>
           <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
-            "I'm Vegan With High Macro Needs. This Service I Discovered From A Friend And It Honestly Has Changed My Life. Knowing That Every Meal I Eat Is Packed With The Right Macros And Made With Clean Ingredients Takes So Much Stress Out Of My Day. The Weekly Menu Always Has Something I'm Excited About. ReBuilt Has Genuinely Made Healthy Eating Feel Easy And Enjoyable — Not Like A Chore."
+            "I'm really happy with ReBuilt Meals. The attention I received from Arthur and the team was really top notch. They helped me set up my account over the phone by offering step-by-step instructions and explaining all of the options to me. The food is very tasty while being healthy and affordable at the same time. The website is very user friendly. I commute to Tampa for work every day and using ReBuilt Meals allows me to save so much time and money while sticking to my health and finance goals. I really like that I get to vote on the meals."
           </p>
           <div class="flex items-center justify-between">
-            <cite class="not-italic font-bold text-rb-black text-sm">Jennifer Polasco</cite>
+            <cite class="not-italic font-bold text-rb-black text-sm">Jennifer Polanco</cite>
             <img src="google-review.svg" alt="Google Review" class="h-6 w-auto" />
           </div>
         </article>
