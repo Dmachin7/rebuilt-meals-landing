@@ -93,7 +93,7 @@
     .google-g span:nth-child(4) { color: #34A853; }
 
     /* CTA button rounded corners */
-    .btn-cta { border-radius: 25px; }
+    .btn-cta { border-radius: 10px; }
 
     /* Mobile overrides for elements with inline styles */
     @media (max-width: 767px) {
@@ -154,6 +154,14 @@
       header nav {
         background: transparent !important;
         box-shadow: none !important;
+      }
+    }
+
+    /* Desktop: pasta drifts right as viewport shrinks */
+    @media (min-width: 768px) {
+      #difference { overflow: hidden; }
+      #pasta-img-wrap {
+        right: calc(-30px - max(0px, (1100px - 100vw)));
       }
     }
   </style>
@@ -288,7 +296,7 @@
 
       <!-- CTA -->
       <a
-        href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
+        href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
         aria-label="Claim your offer"
         class="flex-shrink-0 bg-rb-green text-white text-sm font-bold px-5 py-2 btn-cta hover:opacity-90 transition-opacity whitespace-nowrap"
       >
@@ -322,17 +330,17 @@
     </picture>
 
     <!-- Hero content -->
-    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-4 md:px-10 flex items-start justify-start pt-14 md:items-center md:pt-20">
+    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-4 md:px-10 flex items-start justify-start pt-24 md:items-center md:pt-20">
       <div class="max-w-xl text-left md:mx-0">
         <!-- Google review badge -->
-        <div class="mb-3">
+        <div class="mb-1">
           <img src="google-review-hero.png" alt="4.9 Stars on Google" class="h-10 md:h-24 w-auto block" style="mix-blend-mode: multiply;" />
         </div>
 
         <!-- H1 Headline -->
         <h1 class="text-rb-black text-2xl md:text-4xl lg:text-6xl font-black leading-tight mb-3">
-          <span class="block">Fresh, Macro Balanced</span>
-          <span class="block">Meals. <span class="text-rb-green">Fuel Your Life.</span></span>
+          <span class="block md:whitespace-nowrap">Fresh, Macro Balanced</span>
+          <span class="block md:whitespace-nowrap">Meals. <span class="text-rb-green">Fuel Your Life.</span></span>
         </h1>
 
         <!-- Subtext -->
@@ -349,9 +357,9 @@
         <!-- CTA Button -->
         <div class="text-left">
           <a
-            href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
+            href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
             aria-label="Get the 50% off offer now"
-            class="inline-block bg-rb-green text-white font-bold text-base px-8 py-4 md:px-12 md:py-5 rounded btn-cta uppercase tracking-widest hover:opacity-90 transition-opacity"
+            class="inline-block bg-rb-green text-white font-bold text-base px-5 py-2 md:px-12 md:py-5 rounded btn-cta uppercase tracking-widest hover:opacity-90 transition-opacity"
           >
             Get Offer Now
           </a>
@@ -407,9 +415,9 @@
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 152px; right: 0px;">Macro Balanced</span>
             <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
               <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Tomato Basil Chicken</h3>
-              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
-                <span class="whitespace-nowrap"><span class="font-bold">41g</span> Protein</span>
-                <span class="whitespace-nowrap"><span class="font-bold">8g</span> Fat</span>
+              <div class="flex justify-between md:justify-center md:gap-6 items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4 overflow-hidden">
+                <span><span class="font-bold whitespace-nowrap">41g</span> Protein</span>
+                <span><span class="font-bold whitespace-nowrap">8g</span> Fat</span>
                 <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">348</span> Calories</span>
               </div>
             </div>
@@ -431,9 +439,9 @@
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Classic Recipe ReBuilt</span>
             <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
               <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Classic Chicken Parm</h3>
-              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
-                <span class="whitespace-nowrap"><span class="font-bold">48g</span> Protein</span>
-                <span class="whitespace-nowrap"><span class="font-bold">37g</span> Carbs</span>
+              <div class="flex justify-between md:justify-center md:gap-6 items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4 overflow-hidden">
+                <span><span class="font-bold whitespace-nowrap">48g</span> Protein</span>
+                <span><span class="font-bold whitespace-nowrap">37g</span> Carbs</span>
                 <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">457</span> Calories</span>
               </div>
             </div>
@@ -455,9 +463,9 @@
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Low Carb</span>
             <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
               <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Cali Burger</h3>
-              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
-                <span class="whitespace-nowrap"><span class="font-bold">30g</span> Protein</span>
-                <span class="whitespace-nowrap"><span class="font-bold">5g</span> Net Carbs</span>
+              <div class="flex justify-between md:justify-center md:gap-6 items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4 overflow-hidden">
+                <span><span class="font-bold whitespace-nowrap">30g</span> Protein</span>
+                <span><span class="font-bold whitespace-nowrap">5g</span> Net Carbs</span>
                 <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">475</span> Calories</span>
               </div>
             </div>
@@ -479,9 +487,9 @@
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Gluten Free</span>
             <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
               <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Brown Butter &amp; Sage</h3>
-              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
-                <span class="whitespace-nowrap"><span class="font-bold">8g</span> Protein</span>
-                <span class="whitespace-nowrap"><span class="font-bold">39g</span> Carbs</span>
+              <div class="flex justify-between md:justify-center md:gap-6 items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4 overflow-hidden">
+                <span><span class="font-bold whitespace-nowrap">8g</span> Protein</span>
+                <span><span class="font-bold whitespace-nowrap">39g</span> Carbs</span>
                 <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">350</span> Calories</span>
               </div>
             </div>
@@ -503,9 +511,9 @@
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Flavor Packed</span>
             <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
               <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Smokey Maple BBQ Brisket</h3>
-              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
-                <span class="whitespace-nowrap"><span class="font-bold">34g</span> Protein</span>
-                <span class="whitespace-nowrap"><span class="font-bold">36g</span> Carbs</span>
+              <div class="flex justify-between md:justify-center md:gap-6 items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4 overflow-hidden">
+                <span><span class="font-bold whitespace-nowrap">34g</span> Protein</span>
+                <span><span class="font-bold whitespace-nowrap">36g</span> Carbs</span>
                 <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">460</span> Calories</span>
               </div>
             </div>
@@ -527,9 +535,9 @@
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Healthy Breakfast</span>
             <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
               <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Chorizo &amp; Guac Scramble</h3>
-              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
-                <span class="whitespace-nowrap"><span class="font-bold">26g</span> Protein</span>
-                <span class="whitespace-nowrap"><span class="font-bold">4g</span> Net Carbs</span>
+              <div class="flex justify-between md:justify-center md:gap-6 items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4 overflow-hidden">
+                <span><span class="font-bold whitespace-nowrap">26g</span> Protein</span>
+                <span><span class="font-bold whitespace-nowrap">4g</span> Net Carbs</span>
                 <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">370</span> Calories</span>
               </div>
             </div>
@@ -541,7 +549,7 @@
       <!-- CTA below grid -->
       <div class="text-center mt-12">
         <a
-          href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
+          href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
           aria-label="Claim your offer and see the full menu"
           class="inline-block bg-rb-green text-white font-bold px-10 py-4 rounded btn-cta uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
         >
@@ -633,7 +641,7 @@
       <!-- CTA -->
       <div class="text-center mt-12">
         <a
-          href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
+          href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
           aria-label="Get started with your first ReBuilt Meals box"
           class="inline-block bg-rb-green text-white font-bold px-10 py-4 rounded btn-cta uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
         >
@@ -718,7 +726,7 @@
           <!-- CTA -->
           <div class="mt-10 text-center md:text-left">
             <a
-              href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
+              href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
               aria-label="Get started with ReBuilt Meals today"
               class="inline-block bg-rb-green text-white font-bold px-8 py-4 rounded btn-cta uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
             >
@@ -731,7 +739,7 @@
     </div>
 
     <!-- Pasta image: absolutely positioned, half off right edge -->
-    <div id="pasta-img-wrap" class="absolute top-1/2 -translate-y-1/2 z-10" style="right: -30px;">
+    <div id="pasta-img-wrap" class="absolute top-1/2 -translate-y-1/2 z-10">
       <img
         src="difference-pasta.png"
         alt="A beautifully plated fresh pasta dish — an example of ReBuilt's chef-quality meals made without seed oils"
@@ -818,7 +826,7 @@
       <!-- CTA -->
       <div class="text-center mt-12">
         <a
-          href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
+          href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
           aria-label="Get started with ReBuilt Meals and join thousands of happy customers"
           class="inline-block bg-rb-green text-white font-bold px-10 py-4 rounded btn-cta uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
         >
@@ -882,7 +890,7 @@
           <!-- CTA button -->
           <div class="text-center md:text-left">
             <a
-              href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
+              href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
               aria-label="Get your offer and start eating better today"
               class="inline-block bg-rb-black text-white font-bold px-10 py-4 rounded btn-cta uppercase tracking-widest text-sm hover:opacity-90 transition-colors"
             >
@@ -996,7 +1004,7 @@
           <!-- CTA -->
           <div class="mt-10 text-center">
             <a
-              href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
+              href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
               aria-label="Get started and order your first ReBuilt Meals box"
               class="inline-block bg-rb-green text-white font-bold px-10 py-4 rounded uppercase tracking-widest text-sm hover:opacity-90 transition-opacity"
             >
