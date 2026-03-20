@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KGZR9M4M');</script>
+  <!-- End Google Tag Manager -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -95,7 +103,7 @@
         display: block !important;
         position: relative !important;
         width: 72% !important;
-        margin: -280px auto 0 !important;
+        margin: -160px auto 0 !important;
         bottom: auto !important; right: auto !important;
         order: -1;
         overflow: hidden;
@@ -103,21 +111,23 @@
       }
       #eat-better-photo img { width: 100% !important; height: auto !important; display: block; }
       #eat-better-content { width: 100% !important; padding-top: 1.5rem !important; }
+      #eat-better .max-w-7xl { padding-left: 0.75rem !important; padding-right: 0.75rem !important; }
       #hero { height: 100svh !important; margin-top: 0 !important; }
-      #difference-content { max-width: 82% !important; margin-left: auto !important; margin-right: auto !important; }
+      #difference-content { max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; }
       #difference { overflow: visible !important; padding-bottom: 260px !important; }
       #pasta-img-wrap {
         display: block !important;
         position: absolute !important;
-        bottom: -130px !important;
+        bottom: -100px !important;
         top: auto !important;
         left: 50% !important;
         right: auto !important;
         transform: translateX(-50%) !important;
         z-index: 1 !important;
+        width: 78vw !important;
       }
-      #pasta-img-wrap img { width: 160vw !important; height: auto !important; }
-      #reviews { position: relative; z-index: 2; padding-bottom: 280px !important; }
+      #pasta-img-wrap img { width: 100% !important; height: auto !important; }
+      #reviews { position: relative; z-index: 2; background: white; }
       #eat-better { padding-bottom: 220px !important; }
       #faq { padding-top: calc(32vw + 2rem) !important; position: relative; }
       #faq-lightbulb {
@@ -250,6 +260,11 @@
 
 <body class="bg-white font-poppins text-rb-black">
 
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGZR9M4M"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
 <!-- ============================================================
      HEADER: Announcement Bar + Navigation
 ============================================================ -->
@@ -307,7 +322,7 @@
     </picture>
 
     <!-- Hero content -->
-    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-10 flex items-start justify-start pt-24 md:items-center md:pt-20">
+    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-4 md:px-10 flex items-start justify-start pt-24 md:items-center md:pt-20">
       <div class="max-w-xl text-left md:mx-0">
         <!-- Google review badge -->
         <div class="mb-6">
@@ -315,13 +330,13 @@
         </div>
 
         <!-- H1 Headline -->
-        <h1 class="text-rb-black text-4xl md:text-6xl font-black leading-tight mb-6">
-          <span class="block whitespace-nowrap">Fresh, Macro Balanced</span>
-          <span class="block whitespace-nowrap">Meals. <span class="text-rb-green">Fuel Your Life.</span></span>
+        <h1 class="text-rb-black text-3xl md:text-4xl lg:text-6xl font-black leading-tight mb-6">
+          <span class="block">Fresh, Macro Balanced</span>
+          <span class="block">Meals. <span class="text-rb-green">Fuel Your Life.</span></span>
         </h1>
 
         <!-- Subtext -->
-        <p class="text-rb-black text-lg font-light mb-10 leading-relaxed">
+        <p class="text-rb-black text-base md:text-lg font-light mb-10 leading-relaxed">
           Chef-Prepared, Ready-To-Eat Meals Cooked Without Seed Oils And Delivered Fresh To Your Door.
           New Menu Every Week.
         </p>
@@ -336,7 +351,7 @@
           <a
             href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=Landing1" target="_blank" rel="noopener"
             aria-label="Get the 50% off offer now"
-            class="inline-block bg-rb-green text-white font-bold text-base px-12 py-5 rounded btn-cta uppercase tracking-widest hover:opacity-90 transition-opacity"
+            class="inline-block bg-rb-green text-white font-bold text-base px-8 py-4 md:px-12 md:py-5 rounded btn-cta uppercase tracking-widest hover:opacity-90 transition-opacity"
           >
             Get Offer Now
           </a>
@@ -364,21 +379,21 @@
 
   <!-- 4. SEE WHAT'S COOKING — MEAL GRID -->
   <section id="menu" aria-label="See What's Cooking — Weekly Menu" class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-3 md:px-6">
       <!-- Section header -->
       <div class="text-center mb-12">
         <p class="text-rb-green text-xs font-bold uppercase tracking-widest mb-2">THE MENU</p>
-        <h2 class="text-4xl font-black text-rb-black">See What's Cooking</h2>
+        <h2 class="text-3xl md:text-4xl font-black text-rb-black">See What's Cooking</h2>
         <p class="text-gray-500 mt-2 text-sm">Our Menu Rotates Every Week — Here's a Sample of Our Wide Variety of Options</p>
       </div>
 
       <!-- Meal Grid: 3 columns × 2 rows -->
-      <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2 md:gap-6">
 
         <!-- Meal Card 1 -->
-        <div class="pt-24 md:pt-24">
-          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+        <div class="pt-20 md:pt-24">
+          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal1.jpg"
                 alt="Tomato Basil Chicken — a fresh, high-protein chicken meal with tomato basil sauce"
@@ -390,21 +405,21 @@
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Dairy Free</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 152px; left: 0px;">Soy Free</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 152px; right: 0px;">Macro Balanced</span>
-            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
-              <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Tomato Basil Chicken</h3>
-              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
-                <span>Protein <span class="font-normal">41g</span></span>
-                <span>Fat <span class="font-normal">8g</span></span>
-                <span class="text-gray-400 font-normal">348 Calories</span>
+            <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
+              <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Tomato Basil Chicken</h3>
+              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
+                <span class="whitespace-nowrap"><span class="font-bold">41g</span> Protein</span>
+                <span class="whitespace-nowrap"><span class="font-bold">8g</span> Fat</span>
+                <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">348</span> Calories</span>
               </div>
             </div>
           </article>
         </div>
 
         <!-- Meal Card 2 -->
-        <div class="pt-24 md:pt-24">
-          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+        <div class="pt-20 md:pt-24">
+          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal2.jpg"
                 alt="Classic Chicken Parmesan with marinara sauce and fresh herbs"
@@ -414,21 +429,21 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Protein Packed!</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Classic Recipe ReBuilt</span>
-            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
-              <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Classic Chicken Parm</h3>
-              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
-                <span>Protein <span class="font-normal">48g</span></span>
-                <span>Carbs <span class="font-normal">37g</span></span>
-                <span class="text-gray-400 font-normal">457 Calories</span>
+            <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
+              <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Classic Chicken Parm</h3>
+              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
+                <span class="whitespace-nowrap"><span class="font-bold">48g</span> Protein</span>
+                <span class="whitespace-nowrap"><span class="font-bold">37g</span> Carbs</span>
+                <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">457</span> Calories</span>
               </div>
             </div>
           </article>
         </div>
 
         <!-- Meal Card 3 -->
-        <div class="pt-24 md:pt-24">
-          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+        <div class="pt-20 md:pt-24">
+          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal3.jpg"
                 alt="Cali Burger — a fresh California-style burger with crisp toppings"
@@ -438,21 +453,21 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Keto Approved</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Low Carb</span>
-            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
-              <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Cali Burger</h3>
-              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
-                <span>Protein <span class="font-normal">30g</span></span>
-                <span>Net Carbs <span class="font-normal">5g</span></span>
-                <span class="text-gray-400 font-normal">475 Calories</span>
+            <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
+              <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Cali Burger</h3>
+              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
+                <span class="whitespace-nowrap"><span class="font-bold">30g</span> Protein</span>
+                <span class="whitespace-nowrap"><span class="font-bold">5g</span> Net Carbs</span>
+                <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">475</span> Calories</span>
               </div>
             </div>
           </article>
         </div>
 
         <!-- Meal Card 4 -->
-        <div class="pt-24 md:pt-24">
-          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+        <div class="pt-20 md:pt-24">
+          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal4.jpg"
                 alt="Vegan Brown Butter and Sage Spaghetti Squash with seasonal vegetables"
@@ -462,21 +477,21 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Vegan</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Gluten Free</span>
-            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
-              <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Brown Butter &amp; Sage</h3>
-              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
-                <span>Protein <span class="font-normal">8g</span></span>
-                <span>Carbs <span class="font-normal">39g</span></span>
-                <span class="text-gray-400 font-normal">350 Calories</span>
+            <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
+              <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Brown Butter &amp; Sage</h3>
+              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
+                <span class="whitespace-nowrap"><span class="font-bold">8g</span> Protein</span>
+                <span class="whitespace-nowrap"><span class="font-bold">39g</span> Carbs</span>
+                <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">350</span> Calories</span>
               </div>
             </div>
           </article>
         </div>
 
         <!-- Meal Card 5 -->
-        <div class="pt-24 md:pt-24">
-          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+        <div class="pt-20 md:pt-24">
+          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal5.jpg"
                 alt="Smokey Maple BBQ Brisket with caramelized maple glaze and roasted sides"
@@ -486,21 +501,21 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Premium Meat</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Flavor Packed</span>
-            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
-              <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Smokey Maple BBQ Brisket</h3>
-              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
-                <span>Protein <span class="font-normal">34g</span></span>
-                <span>Carbs <span class="font-normal">36g</span></span>
-                <span class="text-gray-400 font-normal">460 Calories</span>
+            <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
+              <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Smokey Maple BBQ Brisket</h3>
+              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
+                <span class="whitespace-nowrap"><span class="font-bold">34g</span> Protein</span>
+                <span class="whitespace-nowrap"><span class="font-bold">36g</span> Carbs</span>
+                <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">460</span> Calories</span>
               </div>
             </div>
           </article>
         </div>
 
         <!-- Meal Card 6 -->
-        <div class="pt-24 md:pt-24">
-          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-44 h-44 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
+        <div class="pt-20 md:pt-24">
+          <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
+            <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
                 src="meal6.jpg"
                 alt="Chorizo Guacamole Scramble — a keto-friendly high-protein breakfast meal"
@@ -510,12 +525,12 @@
             </div>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; left: 0px;">Keto Approved</span>
             <span class="badge-card bg-white text-rb-black text-sm font-semibold rounded-full px-5 py-2 absolute z-20" style="top: 110px; right: 0px;">Healthy Breakfast</span>
-            <div class="pt-32 md:pt-60 px-3 md:px-6 pb-4">
-              <h3 class="font-bold text-rb-black text-sm mb-3 leading-snug text-center">Chorizo &amp; Guac Scramble</h3>
-              <div class="flex justify-center items-center gap-x-2 md:gap-4 text-[9px] md:text-xs font-semibold bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-3 py-3 px-2 md:px-4">
-                <span>Protein <span class="font-normal">26g</span></span>
-                <span>Net Carbs <span class="font-normal">4g</span></span>
-                <span class="text-gray-400 font-normal">370 Calories</span>
+            <div class="pt-20 md:pt-60 px-3 md:px-6 pb-4 flex flex-col flex-1">
+              <h3 class="font-bold text-rb-black text-xs mb-3 text-center leading-tight">Chorizo &amp; Guac Scramble</h3>
+              <div class="flex justify-between items-center text-[9px] md:text-xs font-normal bg-black text-white rounded-b-2xl -mx-3 md:-mx-6 -mb-4 mt-auto py-2 md:py-3 px-3 md:px-4">
+                <span class="whitespace-nowrap"><span class="font-bold">26g</span> Protein</span>
+                <span class="whitespace-nowrap"><span class="font-bold">4g</span> Net Carbs</span>
+                <span class="text-gray-400 whitespace-nowrap"><span class="font-bold text-white">370</span> Calories</span>
               </div>
             </div>
           </article>
@@ -552,20 +567,20 @@
 
         <!-- Step 1 -->
         <div class="flex flex-col items-center md:items-start">
-          <div class="rounded-2xl mb-2 md:mb-6 shadow-md w-[38vw] h-[38vw] md:w-full md:h-auto overflow-hidden flex-shrink-0">
+          <div class="rounded-2xl mb-3 md:mb-6 shadow-md w-44 h-44 md:w-full md:h-auto overflow-hidden flex-shrink-0">
             <img
               src="how-it-works-1.jpg"
               alt="A person browsing and selecting their weekly meal choices on a laptop"
               loading="lazy"
-              class="w-full h-full md:h-auto object-cover md:object-contain rounded-2xl"
+              class="w-full h-full object-cover md:object-contain rounded-2xl"
             />
           </div>
-          <div class="flex flex-row items-start gap-2 md:gap-4 w-[38vw] md:w-auto">
-            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0" style="line-height:1;">1</span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 md:mt-2 leading-snug">Choose Your Meals</h3>
-              <p class="text-gray-500 text-[10px] md:text-sm leading-relaxed">
-                New Options Every Week To Suit Your Macros, Dietary Needs, Or Let Us Build Your Box.
+          <div class="flex flex-row items-stretch gap-2 md:gap-4 w-44 md:w-auto">
+            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0 flex items-center" style="line-height:1;">1</span>
+            <div class="flex-1 min-w-0 flex flex-col justify-center">
+              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 leading-snug">Choose Your Meals</h3>
+              <p class="text-gray-500 text-[10px] md:text-sm leading-snug">
+                New options every week. We'll match your macros or build your box for you.
               </p>
             </div>
           </div>
@@ -573,20 +588,20 @@
 
         <!-- Step 2 -->
         <div class="flex flex-col items-center md:items-start">
-          <div class="rounded-2xl mb-2 md:mb-6 shadow-md w-[38vw] h-[38vw] md:w-full md:h-auto overflow-hidden flex-shrink-0">
+          <div class="rounded-2xl mb-3 md:mb-6 shadow-md w-44 h-44 md:w-full md:h-auto overflow-hidden flex-shrink-0">
             <img
               src="how-it-works-2.jpg"
               alt="A professional chef cooking fresh, high-quality meals in the ReBuilt kitchen"
               loading="lazy"
-              class="w-full h-full md:h-auto object-cover md:object-contain rounded-2xl"
+              class="w-full h-full object-cover md:object-contain rounded-2xl"
             />
           </div>
-          <div class="flex flex-row items-start gap-2 md:gap-4 w-[38vw] md:w-auto">
-            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0" style="line-height:1;">2</span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 md:mt-2 leading-snug">We Cook, You Live</h3>
-              <p class="text-gray-500 text-[10px] md:text-sm leading-relaxed">
-                Fresh Ingredients Prepared From Real Recipes. Endless Preference Options, Delicious Meals Crafted Every Single Week.
+          <div class="flex flex-row items-stretch gap-2 md:gap-4 w-44 md:w-auto">
+            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0 flex items-center" style="line-height:1;">2</span>
+            <div class="flex-1 min-w-0 flex flex-col justify-center">
+              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 leading-snug">We Cook, You Live</h3>
+              <p class="text-gray-500 text-[10px] md:text-sm leading-snug">
+                Real recipes, fresh ingredients. Endless options crafted every week.
               </p>
             </div>
           </div>
@@ -594,20 +609,20 @@
 
         <!-- Step 3 -->
         <div class="flex flex-col items-center md:items-start">
-          <div class="rounded-2xl mb-2 md:mb-6 shadow-md w-[38vw] h-[38vw] md:w-full md:h-auto overflow-hidden flex-shrink-0">
+          <div class="rounded-2xl mb-3 md:mb-6 shadow-md w-44 h-44 md:w-full md:h-auto overflow-hidden flex-shrink-0">
             <img
               src="how-it-works-3.jpg"
               alt="A branded ReBuilt meal delivery box arriving fresh at a customer's doorstep"
               loading="lazy"
-              class="w-full h-full md:h-auto object-cover md:object-contain rounded-2xl"
+              class="w-full h-full object-cover md:object-contain rounded-2xl"
             />
           </div>
-          <div class="flex flex-row items-start gap-2 md:gap-4 w-[38vw] md:w-auto">
-            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0" style="line-height:1;">3</span>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 md:mt-2 leading-snug">Delivered Fresh</h3>
-              <p class="text-gray-500 text-[10px] md:text-sm leading-relaxed">
-                Get meals delivered to your door, or Picked up locally. never frozen. Heat in 2 minutes. Done.
+          <div class="flex flex-row items-stretch gap-2 md:gap-4 w-44 md:w-auto">
+            <span class="text-7xl md:text-9xl font-black text-rb-green flex-shrink-0 flex items-center" style="line-height:1;">3</span>
+            <div class="flex-1 min-w-0 flex flex-col justify-center">
+              <h3 class="text-xs md:text-lg font-bold text-rb-black mb-1 md:mb-2 leading-snug">Delivered Fresh</h3>
+              <p class="text-gray-500 text-[10px] md:text-sm leading-snug">
+                Door delivery or local pickup. Never frozen. Heat in 2 minutes.
               </p>
             </div>
           </div>
@@ -631,18 +646,18 @@
 
 
   <!-- 6. THE REBUILT DIFFERENCE -->
-  <section id="difference" aria-label="The Rebuilt Difference — Why Choose ReBuilt" class="py-20 relative" style="background-image: url('rebuilt-difference-background.png'); background-size: cover; background-position: center; overflow-x: clip; overflow-y: visible;">
+  <section id="difference" aria-label="The Rebuilt Difference — Why Choose ReBuilt" class="py-20 relative" style="background-image: url('rebuilt-difference-background.png'); background-size: cover; background-position: center;">
     <div class="max-w-7xl mx-auto px-6">
       <div id="difference-content" style="max-width: 62%;">
 
         <!-- Features -->
         <div>
           <p class="text-rb-green text-xs font-bold uppercase tracking-widest mb-3">Why ReBuilt</p>
-          <h2 class="text-4xl font-black text-white mb-10">
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-10">
             The <span class="text-rb-green">Rebuilt</span> Difference
           </h2>
 
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
 
             <!-- Feature 1 -->
             <div>
@@ -716,7 +731,7 @@
     </div>
 
     <!-- Pasta image: absolutely positioned, half off right edge -->
-    <div id="pasta-img-wrap" class="absolute top-1/2 -translate-y-1/2 z-10" style="right: min(-30px, calc(-30px + (100vw - 1440px) * 0.5));">
+    <div id="pasta-img-wrap" class="absolute top-1/2 -translate-y-1/2 z-10" style="right: -30px;">
       <img
         src="difference-pasta.png"
         alt="A beautifully plated fresh pasta dish — an example of ReBuilt's chef-quality meals made without seed oils"
@@ -822,38 +837,44 @@
 
         <!-- Left: Offer content -->
         <div id="eat-better-content" class="pt-20" style="width: 48%;">
-          <div class="p-8">
+          <div class="px-0 py-4 md:p-8">
           <p class="text-rb-black text-xs font-bold uppercase tracking-widest mb-2 text-center md:text-left">Let's Get Started</p>
-          <h2 class="text-4xl font-black text-rb-black mb-2 text-center md:text-left">Ready To <span class="text-rb-green">Eat Better?</span></h2>
+          <h2 class="text-3xl md:text-4xl font-black text-rb-black mb-2 text-center md:text-left">Ready To <span class="text-rb-green">Eat Better?</span></h2>
           <p class="text-gray-500 text-sm mb-8 text-center md:text-left">Join thousands of subscribers eating fresh, chef-prepared meals every week.</p>
 
           <!-- Offer Badge Cards -->
-          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <div class="flex flex-row gap-1.5 md:gap-4 mb-8">
 
             <!-- Badge 1: 50% OFF -->
-            <div class="flex-1 bg-white rounded-2xl p-5 text-center">
-              <p class="text-black text-xs font-semibold uppercase tracking-wider mb-1">First Box</p>
-              <p class="text-rb-green text-4xl font-black leading-none">50%</p>
-              <p class="text-rb-green text-4xl font-black leading-none">OFF</p>
-              <p class="text-black text-xs mt-2">Applied Automatically At Checkout</p>
+            <div class="flex-1 bg-white rounded-2xl p-2 md:p-5 text-center flex flex-col aspect-square overflow-hidden">
+              <p class="text-black text-[9px] md:text-xs font-semibold uppercase tracking-wider">First Box</p>
+              <div class="flex-1 flex flex-col justify-center">
+                <p class="text-rb-green text-3xl md:text-4xl font-black leading-none">50%</p>
+                <p class="text-rb-green text-3xl md:text-4xl font-black leading-none">OFF</p>
+              </div>
+              <p class="text-black text-[9px] md:text-xs leading-tight">Auto applied at checkout</p>
             </div>
 
             <!-- Badge 2: FREE TREAT -->
-            <div class="flex-1 bg-white rounded-2xl p-5 text-center">
-              <p class="text-rb-black text-xs font-bold uppercase tracking-wider mb-1">Every Box After</p>
-              <p class="text-rb-green text-4xl font-black leading-none">FREE</p>
-              <p class="text-rb-green text-4xl font-black leading-none">TREAT</p>
-              <p class="text-rb-black text-base font-bold mt-1">FOR LIFE!</p>
-              <p class="text-black text-xs mt-2">One free muffin, cookie, or the like in every order</p>
+            <div class="flex-1 bg-white rounded-2xl p-2 md:p-5 text-center flex flex-col aspect-square overflow-hidden">
+              <p class="text-rb-black text-[9px] md:text-xs font-bold uppercase tracking-wider">Every Box</p>
+              <div class="flex-1 flex flex-col justify-center">
+                <p class="text-rb-green text-2xl md:text-4xl font-black leading-none">FREE</p>
+                <p class="text-rb-green text-2xl md:text-4xl font-black leading-none">TREAT</p>
+                <p class="text-rb-black text-[10px] md:text-xs font-bold mt-0.5">FOR LIFE!</p>
+              </div>
+              <p class="text-black text-[9px] md:text-xs leading-tight">One free muffin, cookie, or the like in every order</p>
             </div>
 
             <!-- Badge 3: FRESH FAST & DELICIOUS -->
-            <div class="flex-1 bg-white rounded-2xl p-5 text-center">
-              <p class="text-black text-xs font-semibold uppercase tracking-wider mb-1">Always</p>
-              <p class="text-rb-green text-2xl font-black leading-tight">FRESH,</p>
-              <p class="text-rb-green text-2xl font-black leading-tight">FAST &amp;</p>
-              <p class="text-rb-green text-2xl font-black leading-tight">DELICIOUS</p>
-              <p class="text-black text-xs mt-2">Chef-Level Quality, Guaranteed</p>
+            <div class="flex-1 bg-white rounded-2xl p-2 md:p-5 text-center flex flex-col aspect-square overflow-hidden">
+              <p class="text-black text-[9px] md:text-xs font-semibold uppercase tracking-wider">Always</p>
+              <div class="flex-1 flex flex-col justify-center">
+                <p class="text-rb-green text-base md:text-2xl font-black leading-tight">FRESH,</p>
+                <p class="text-rb-green text-base md:text-2xl font-black leading-tight">FAST &amp;</p>
+                <p class="text-rb-green text-base md:text-2xl font-black leading-tight">DELICIOUS</p>
+              </div>
+              <p class="text-black text-[9px] md:text-xs leading-tight">Chef-Level Quality, Guaranteed</p>
             </div>
 
           </div><!-- /badges -->
@@ -867,7 +888,7 @@
             >
               Get Offer Now →
             </a>
-            <p class="text-rb-black text-[8px] mt-3 leading-tight mx-auto md:mx-0" style="max-width: 320px;">Skip or cancel anytime. No commitment. New menu every week. New subscribers only. 50% discount applied to first order. Free treat included with each delivery starting week 2 while subscription is active.</p>
+            <p class="text-[10px] mt-3 leading-tight mx-auto md:mx-0" style="max-width: 320px; color: rgba(30, 30, 30, 0.3);">Skip or cancel anytime. No commitment. New menu every week. New subscribers only. 50% discount applied to first order. Free treat included with each delivery starting week 2 while subscription is active.</p>
           </div>
           </div><!-- /green bg wrapper -->
         </div>
@@ -890,7 +911,7 @@
   <!-- 9. COMMON QUESTIONS — FAQ -->
   <section id="faq" aria-label="Frequently Asked Questions" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-stretch">
 
         <!-- Left: Lightbulb image -->
         <div id="faq-lightbulb" class="hidden md:block rounded-2xl overflow-hidden">
@@ -900,7 +921,7 @@
         <!-- Right: FAQ -->
         <div>
           <p class="text-rb-black text-xs font-bold uppercase tracking-widest mb-3 text-center md:text-left">FAQ</p>
-          <h2 class="text-4xl font-black text-rb-black mb-10 text-center md:text-left">Common <span class="text-rb-green">Questions</span></h2>
+          <h2 class="text-3xl md:text-4xl font-black text-rb-black mb-10 text-center md:text-left">Common <span class="text-rb-green">Questions</span></h2>
 
           <div class="flex flex-col gap-3">
 
