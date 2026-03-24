@@ -61,8 +61,8 @@
   <!-- Global base styles -->
   <style>
     * { font-family: 'Poppins', sans-serif; }
-    body { font-family: 'Poppins', sans-serif; color: #1E1E1E; overflow-x: hidden; }
-    html { overflow-x: hidden; }
+    body { font-family: 'Poppins', sans-serif; color: #1E1E1E; overflow-x: clip; }
+    html { overflow-x: clip; }
 
     /* FAQ accordion arrow animation */
     details summary { list-style: none; cursor: pointer; }
@@ -289,14 +289,14 @@
     aria-label="Main navigation"
     class="w-full py-3 px-6 bg-white shadow-sm"
   >
-    <div class="max-w-7xl mx-auto flex items-center gap-4">
+    <div class="max-w-7xl mx-auto flex items-center gap-2 md:gap-4">
       <!-- Logo -->
       <a href="https://www.rebuiltmeals.com" aria-label="ReBuilt Meals home" class="flex items-center flex-shrink-0">
         <img id="nav-logo" src="logo.png" alt="ReBuilt logo" class="h-16 w-auto" />
       </a>
 
       <!-- Offer text — centered between logo and button -->
-      <p class="flex-1 text-center text-[10px] md:text-sm text-rb-black md:text-gray-600 leading-snug line-clamp-2">
+      <p class="flex-1 text-center text-[12px] md:text-[15px] text-rb-black md:text-gray-600 leading-snug line-clamp-2">
         Get <strong>50% off</strong> your first box + <strong>Free Treat</strong> with Every Order starting week 2
       </p>
 
@@ -336,15 +336,15 @@
     </picture>
 
     <!-- Hero content -->
-    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-4 md:px-10 flex items-start justify-start pt-24 md:items-center md:pt-20">
+    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-6 flex items-start justify-start pt-24 md:items-center md:pb-40">
       <div class="max-w-xl text-left md:mx-0">
         <!-- Google review badge -->
-        <div class="mb-1">
+        <div class="mb-1 -ml-6">
           <img src="google-review-hero.png" alt="4.9 Stars on Google" class="h-10 md:h-24 w-auto block" style="mix-blend-mode: multiply;" />
         </div>
 
         <!-- H1 Headline -->
-        <h1 class="text-rb-black text-2xl md:text-4xl lg:text-6xl font-black leading-tight mb-2">
+        <h1 class="text-rb-black text-3xl md:text-4xl lg:text-6xl font-black leading-tight mb-2">
           <span class="block md:whitespace-nowrap">Fresh, Macro Balanced</span>
           <span class="block md:whitespace-nowrap">Meals. <span class="text-rb-green">Fuel Your Life.</span></span>
         </h1>
@@ -356,12 +356,12 @@
         </p>
 
         <!-- Offer Text -->
-        <p class="text-rb-black text-xs md:text-base font-semibold mb-2 md:text-left">
-          Get <strong>50% OFF</strong> your first box <strong>+ Free Treat With Every Order</strong> starting week 2
+        <p class="text-rb-black text-xs md:text-base font-semibold mb-2 md:text-left whitespace-nowrap">
+          Get <strong>50% OFF</strong> your first box <strong>+ Free Treat With Every Order</strong> starting week&nbsp;2
         </p>
 
         <!-- CTA Button -->
-        <div class="text-left">
+        <div class="text-left mb-16 md:mb-0">
           <a
             href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
             aria-label="Get the 50% off offer now"
@@ -678,8 +678,8 @@
               <div class="mb-3">
                 <img src="new-menu-every-week.svg" alt="" aria-hidden="true" class="h-8 w-auto" />
               </div>
-              <h3 class="text-white font-bold text-sm mb-1">New Menu Every Week</h3>
-              <p class="text-gray-400 text-xs leading-relaxed">Never get bored. Our chefs create a brand-new rotating menu every single week with Fresh ingredients.</p>
+              <h3 class="text-white font-bold text-sm md:text-base mb-1">New Menu Every Week</h3>
+              <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Never get bored. Our chefs create a brand-new rotating menu every single week with Fresh ingredients.</p>
             </div>
 
             <!-- Feature 2 -->
@@ -687,8 +687,8 @@
               <div class="mb-3">
                 <img src="high-protein-options.svg" alt="" aria-hidden="true" class="h-8 w-auto" />
               </div>
-              <h3 class="text-white font-bold text-sm mb-1">High Protein Options</h3>
-              <p class="text-gray-400 text-xs leading-relaxed">Macro balanced, double protein options, endless preference options, all delicious muscle building meals just for you.</p>
+              <h3 class="text-white font-bold text-sm md:text-base mb-1">High Protein Options</h3>
+              <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Macro balanced, double protein options, endless preference options, all delicious muscle building meals just for you.</p>
             </div>
 
             <!-- Feature 3 -->
@@ -696,8 +696,8 @@
               <div class="mb-3">
                 <img src="no-seed-oils.svg" alt="" aria-hidden="true" class="h-8 w-auto" />
               </div>
-              <h3 class="text-white font-bold text-sm mb-1">No Seed Oils</h3>
-              <p class="text-gray-400 text-xs leading-relaxed">Every meal prepared without seed oils, never shortcuts. Taste the difference in every bite.</p>
+              <h3 class="text-white font-bold text-sm md:text-base mb-1">No Seed Oils</h3>
+              <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Every meal prepared without seed oils, never shortcuts. Taste the difference in every bite.</p>
             </div>
 
             <!-- Feature 4 -->
@@ -705,8 +705,8 @@
               <div class="mb-3">
                 <img src="local-tampa-kitchen.svg" alt="" aria-hidden="true" class="h-8 w-auto" />
               </div>
-              <h3 class="text-white font-bold text-sm mb-1">Local Tampa Kitchen</h3>
-              <p class="text-gray-400 text-xs leading-relaxed">Prepared and delivered fresh from our Tampa Bay kitchen.</p>
+              <h3 class="text-white font-bold text-sm md:text-base mb-1">Local Tampa Kitchen</h3>
+              <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Prepared and delivered fresh from our Tampa Bay kitchen.</p>
             </div>
 
             <!-- Feature 5 -->
@@ -714,8 +714,8 @@
               <div class="mb-3">
                 <img src="9-years-of-excellence.svg" alt="" aria-hidden="true" class="h-8 w-auto" />
               </div>
-              <h3 class="text-white font-bold text-sm mb-1">9+ Years of Excellence</h3>
-              <p class="text-gray-400 text-xs leading-relaxed">We've been feeding healthier people since 2017. Not a startup experiment, but a proven local institution.</p>
+              <h3 class="text-white font-bold text-sm md:text-base mb-1">9+ Years of Excellence</h3>
+              <p class="text-gray-400 text-xs md:text-sm leading-relaxed">We've been feeding healthier people since 2017. Not a startup experiment, but a proven local institution.</p>
             </div>
 
             <!-- Feature 6 -->
@@ -723,8 +723,8 @@
               <div class="mb-3">
                 <img src="fresh-never-frozen.svg" alt="" aria-hidden="true" class="h-8 w-auto" />
               </div>
-              <h3 class="text-white font-bold text-sm mb-1">Fresh, Never Frozen</h3>
-              <p class="text-gray-400 text-xs leading-relaxed">Our meals go straight from the kitchen to you. No long storage, no extra handling, just great taste.</p>
+              <h3 class="text-white font-bold text-sm md:text-base mb-1">Fresh, Never Frozen</h3>
+              <p class="text-gray-400 text-xs md:text-sm leading-relaxed">Our meals go straight from the kitchen to you. No long storage, no extra handling, just great taste.</p>
             </div>
 
           </div><!-- /features grid -->
@@ -788,7 +788,7 @@
         <article class="bg-gray-50 rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow flex flex-col">
           <div class="mb-4">
             <span class="text-yellow-400 text-lg">★★★★★</span>
-          </div>
+          </div> 
           <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-1">
             "These meals are fresh, clean ingredients, no seed oils, balanced and savory. I have tried HelloFresh, HomeChef and Factor. Rebuilt is by far the best. Love the option of warming in an oven vs. using a microwave. I stick them in the air fryer on bake 325 about 8 minutes and honestly it's better than mons cooking. I've been on the program for 4 weeks, everything has been really good, nutritious and filling (in the right way.)"
           </p>
@@ -901,7 +901,7 @@
             >
               Get Offer Now →
             </a>
-            <p class="text-[10px] mt-3 leading-tight mx-auto md:mx-0" style="max-width: 320px; color: rgba(30, 30, 30, 0.3);">Skip or cancel anytime. No commitment. New menu every week. New subscribers only. 50% discount applied to first order. Free treat included with each delivery starting week 2 while subscription is active.</p>
+            <p class="text-[10px] mt-3 leading-tight mx-auto md:mx-0" style="max-width: 320px; color: #1E1E1E;">Skip or cancel anytime. No commitment. New menu every week. New subscribers only. 50% discount applied to first order. Free treat included with each delivery starting week 2 while subscription is active.</p>
           </div>
           </div><!-- /green bg wrapper -->
         </div>
