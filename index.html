@@ -32,6 +32,10 @@
   <meta name="twitter:description" content="ReBuilt delivers fresh, chef-prepared, macro balanced meals straight to your door in Tampa. New menu every week. High protein options. Order now and get 50% off your first box." />
   <meta name="twitter:image" content="https://www.rebuiltmeals.com/hero-bg.jpg" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
   <!-- Hero image preload for performance -->
   <link rel="preload" as="image" href="hero-bg.jpg" />
 
@@ -145,15 +149,25 @@
       }
       #faq-lightbulb img { width: 100% !important; height: 100% !important; object-fit: cover; object-position: center; transform: scale(0.8); border-radius: 3rem !important; }
       .badge-card { display: none !important; }
-      /* Transparent overlay navbar on mobile */
+      /* Sticky transparent navbar on mobile — fades to white on scroll */
       header {
-        position: absolute !important;
+        position: fixed !important;
         top: 0; left: 0; right: 0;
         background: transparent !important;
+        transition: background-color 0.3s ease;
+        z-index: 50;
       }
       header nav {
         background: transparent !important;
         box-shadow: none !important;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+      header.nav-scrolled {
+        background: white !important;
+      }
+      header.nav-scrolled nav {
+        background: white !important;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1) !important;
       }
     }
 
@@ -295,19 +309,19 @@
         <img id="nav-logo" src="logo.png" alt="ReBuilt logo" class="h-10 md:h-16 w-auto" />
       </a>
 
-      <!-- Offer text — centered between logo and button -->
-      <p class="flex-1 text-center text-[10px] md:text-[15px] text-rb-black md:text-gray-600 leading-snug">
-        Get <strong>50% off</strong> your first box + <strong>Free Treat</strong> with Every Order starting week 2
-      </p>
-
-      <!-- CTA -->
-      <a
-        href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
-        aria-label="Claim your offer"
-        class="flex-shrink-0 bg-rb-green text-white text-[10px] md:text-sm font-bold px-3 py-1.5 md:px-5 md:py-2 btn-cta hover:opacity-90 transition-opacity whitespace-nowrap"
-      >
-        Claim Offer
-      </a>
+      <!-- Offer text + CTA — grouped and right-aligned -->
+      <div class="ml-auto flex items-center gap-2 md:gap-3">
+        <p class="text-right text-[10px] md:text-[15px] text-rb-black md:text-gray-600 leading-snug">
+          Get <strong>50% off</strong> your first box + <strong>Free Treat</strong> with Every Order starting week 2
+        </p>
+        <a
+          href="https://www.rebuiltmeals.com/mealplan/meal/entrees?discount=landing1" target="_blank" rel="noopener"
+          aria-label="Claim your offer"
+          class="flex-shrink-0 bg-rb-green text-white text-[10px] md:text-sm font-bold px-3 py-1.5 md:px-5 md:py-2 btn-cta hover:opacity-90 transition-opacity whitespace-nowrap"
+        >
+          Claim Offer
+        </a>
+      </div>
     </div>
   </nav>
 
@@ -323,7 +337,7 @@
     id="hero"
     aria-label="Hero — Fresh, Macro Balanced Meals"
     class="relative"
-    style="height: 993px;"
+    style="min-height: 600px; height: 100svh;"
   >
     <picture>
       <source media="(max-width: 767px)" srcset="mobile-hero-background.png" />
@@ -336,7 +350,7 @@
     </picture>
 
     <!-- Hero content -->
-    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-6 flex items-start justify-start pt-24 md:items-center md:pb-40">
+    <div class="absolute inset-0 z-10 max-w-7xl mx-auto px-6 flex items-start justify-start pt-24 md:items-center md:pb-20">
       <div class="max-w-xl text-left md:mx-0">
         <!-- Google review badge -->
         <div class="mb-1 md:-ml-6">
@@ -344,19 +358,19 @@
         </div>
 
         <!-- H1 Headline -->
-        <h1 class="text-rb-black text-3xl md:text-4xl lg:text-6xl font-black leading-tight mb-2">
+        <h1 class="text-rb-black text-xl md:text-4xl lg:text-6xl font-black leading-tight mb-3">
           <span class="block md:whitespace-nowrap">Fresh, Macro Balanced</span>
           <span class="block md:whitespace-nowrap">Meals. <span class="text-rb-green">Fuel Your Life.</span></span>
         </h1>
 
         <!-- Subtext -->
-        <p class="text-rb-black text-sm md:text-lg font-light mb-2 leading-snug">
+        <p class="text-rb-black text-sm md:text-lg font-light mb-3 leading-snug">
           Chef-Prepared, Ready-To-Eat Meals Cooked Without Seed Oils And Delivered Fresh To Your Door.
           New Menu Every Week.
         </p>
 
         <!-- Offer Text -->
-        <p class="text-rb-black text-xs md:text-base font-semibold mb-2 md:text-left md:whitespace-nowrap">
+        <p class="text-rb-black text-xs md:text-base font-semibold mb-3 md:text-left md:whitespace-nowrap">
           Get <strong>50% OFF</strong> your first box <strong>+ Free Treat With Every Order</strong> starting week&nbsp;2
         </p>
 
@@ -435,7 +449,7 @@
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
             <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
-                src="meal2.jpg"
+                src="meal5.jpg"
                 alt="Classic Chicken Parmesan with marinara sauce and fresh herbs"
                 loading="lazy"
                 class="w-full h-full object-contain"
@@ -459,7 +473,7 @@
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
             <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
-                src="meal3.jpg"
+                src="meal2.jpg"
                 alt="Cali Burger — a fresh California-style burger with crisp toppings"
                 loading="lazy"
                 class="w-full h-full object-contain"
@@ -483,7 +497,7 @@
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
             <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
-                src="meal4.jpg"
+                src="meal3.jpg"
                 alt="Vegan Brown Butter and Sage Spaghetti Squash with seasonal vegetables"
                 loading="lazy"
                 class="w-full h-full object-contain"
@@ -507,7 +521,7 @@
           <article class="bg-white rounded-2xl relative shadow-md hover:shadow-xl transition-shadow border border-gray-100 flex flex-col h-full">
             <div class="absolute -top-16 md:-top-20 left-1/2 -translate-x-1/2 z-10 w-32 h-32 md:w-72 md:h-72 rounded-full overflow-hidden drop-shadow-2xl bg-white">
               <img
-                src="meal5.jpg"
+                src="meal4.jpg"
                 alt="Smokey Maple BBQ Brisket with caramelized maple glaze and roasted sides"
                 loading="lazy"
                 class="w-full h-full object-contain"
@@ -901,7 +915,7 @@
             >
               Get Offer Now →
             </a>
-            <p class="text-[10px] mt-3 leading-tight mx-auto md:mx-0" style="max-width: 320px; color: #1E1E1E;">Skip or cancel anytime. No commitment. New menu every week. New subscribers only. 50% discount applied to first order. Free treat included with each delivery starting week 2 while subscription is active.</p>
+            <p class="text-sm mt-3 leading-tight mx-auto md:mx-0" style="max-width: 320px; color: #1E1E1E;">Skip or cancel anytime. No commitment. New menu every week. New subscribers only. 50% discount applied to first order. Free treat included with each delivery starting week 2 while subscription is active.</p>
           </div>
           </div><!-- /green bg wrapper -->
         </div>
@@ -1046,6 +1060,12 @@
 
   </div>
 </footer>
+
+<script>
+  window.addEventListener('scroll', function() {
+    document.querySelector('header').classList.toggle('nav-scrolled', window.scrollY > 50);
+  });
+</script>
 
 </body>
 </html>
